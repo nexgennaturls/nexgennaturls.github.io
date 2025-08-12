@@ -1,0 +1,138 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My GitHub Pages Site</title>
+  <meta name="description" content="A simple website hosted on GitHub Pages">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071028 0%, #081426 60%);-webkit-font-smoothing:antialiased}
+    .container{max-width:960px;margin:0 auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:#012;text-transform:uppercase;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a.primary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:#fff}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:32px 0}
+    .hero .title{font-size:28px;line-height:1.05;margin:0 0 8px}
+    .hero p{color:var(--muted);margin:0 0 16px}
+    .buttons{display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn.primary{background:var(--accent);color:#042;}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .feature{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .feature h4{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:14px}
+
+    footer{margin-top:36px;padding:18px 0;color:var(--muted);text-align:center;font-size:14px}
+
+    /* responsive */
+    @media (max-width:880px){.grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.logo{width:44px;height:44px}}
+    @media (max-width:560px){.grid{grid-template-columns:1fr}.nav{display:none}.hero{padding:16px 0}.container{padding:16px}}
+
+    /* tiny utilities */
+    .center{display:flex;align-items:center;justify-content:center}
+    .spacer{height:12px}
+    .small{font-size:13px;color:var(--muted)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">MK</div>
+        <div>
+          <div style="font-weight:800">MySite</div>
+          <div class="small">Simple GitHub Pages template</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a class="primary" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1 class="title">Beautiful, fast & free — hosted on GitHub Pages</h1>
+          <p class="muted">This is a clean single-file template. Edit text, swap the logo, add images, then upload as <code>index.html</code> to your <code>username.github.io</code> repo.</p>
+          <div class="buttons">
+            <button class="btn primary" onclick="openInNewTab()">Open live demo</button>
+            <button class="btn ghost" onclick="downloadHTML()">Download HTML</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-weight:800">Ready to publish</div>
+              <div class="small">Just save & push to GitHub</div>
+            </div>
+            <div class="badge">Free</div>
+          </div>
+
+          <div class="spacer"></div>
+          <div class="muted">Steps:</div>
+          <ol class="small" style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+            <li>Save file as <code>index.html</code></li>
+            <li>Create repo: <code>your-username.github.io</code></li>
+            <li>Upload and visit your site</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="features" class="spacer"></section>
+
+      <section class="card">
+        <h3 style="margin:0 0 8px">Features</h3>
+        <p class="muted">A few things included out of the box.</p>
+        <div class="grid" style="margin-top:12px">
+          <div class="feature">
+            <h4>Responsive</h4>
+            <div class="small">Looks good on phone, tablet & desktop.</div>
+          </div>
+          <div class="feature">
+            <h4>Easy to edit</h4>
+            <div class="small">All styles are inside this file — no build step.</div>
+          </div>
+          <div class="feature">
+            <h4>Fast</h4>
+            <div class="small">Small, static, and loads quickly from GitHub's CDN.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="card" style="margin-top:18px">
+        <h3 style="margin:0 0 8px">About this template</h3>
+        <p class="muted">This template is intentionally minimal. Replace the logo, change texts, add images, or paste your own HTML sections. If you'd like a blog or multiple pages, I can help wire up a small site structure or show you how to use Jekyll/GitHub Pages with templates.</p>
+      </section>
+
+      <section id="contact" class="card" style="margin-top:18px">
+        <h3 style="margin:0 0 8px">Contact</h3>
+        <p class="muted">This contact form is a visual placeholder. To receive messages, connect a form service (Formspree, Getform) or use a serverless function.</p>
+        <form onsubmit="event.preventDefault();alert('Demo only — no backend configured');" style="display:grid;gap:8px;margin-top:8px">
+          <input placeholder="Your name" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+          <input placeholder="Email" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+          <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff"></textarea>
+          <div style="display:flex;gap:8px;justify-content:flex-end">
+            <button class="btn ghost" type="reset">Reset</button>
+            <button class="btn primary" type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
